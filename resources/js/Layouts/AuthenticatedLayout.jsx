@@ -50,21 +50,17 @@ export default function Authenticated({ header, children }) {
                                 <Dropdown>
                                     <Dropdown.Trigger>
                                         <span className="inline-flex rounded-md">
-                                            <div class="col-span-full w-1/2">
-                                                <div class="mt-2 flex items-center justify-center gap-x-3">
-                                                    <svg
-                                                        class="h-10 w-10 text-gray-300"
-                                                        viewBox="0 0 24 24"
-                                                        fill="currentColor"
-                                                        aria-hidden="true"
-                                                        data-slot="icon"
-                                                    >
-                                                        <path
-                                                            fill-rule="evenodd"
-                                                            d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
-                                                            clip-rule="evenodd"
+                                            <div className="col-span-full w-1/2">
+                                                <div className="mt-2 flex items-center justify-center gap-x-3">
+                                                <a href={user.avatar}>
+                                                    <div className=" bg-cover">
+                                                        <img
+                                                            src={user.avatar}
+                                                            alt=""
+                                                            className="rounded-full h-10 w-10"
                                                         />
-                                                    </svg>
+                                                    </div>
+                                                </a>
                                                 </div>
                                             </div>
                                             <button
@@ -179,23 +175,19 @@ export default function Authenticated({ header, children }) {
 
                     <div className="border-t border-gray-200 pb-1 pt-4 dark:border-gray-600">
                         <div className="px-4">
-                        <div class="col-span-full w-1/2">
-                                                <div class="mt-2 flex items-center justify-start gap-x-3">
-                                                    <svg
-                                                        class="h-10 w-10 text-gray-300"
-                                                        viewBox="0 0 24 24"
-                                                        fill="currentColor"
-                                                        aria-hidden="true"
-                                                        data-slot="icon"
-                                                    >
-                                                        <path
-                                                            fill-rule="evenodd"
-                                                            d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
-                                                            clip-rule="evenodd"
+                            <div className="col-span-full w-1/2">
+                                <div className="mt-2 flex items-center justify-start gap-x-3">
+                                <a href={user.avatar}>
+                                                    <div className=" bg-cover">
+                                                        <img
+                                                            src={user.avatar}
+                                                            alt=""
+                                                            className="rounded-full h-10 w-10"
                                                         />
-                                                    </svg>
-                                                </div>
-                                            </div>
+                                                    </div>
+                                                </a>
+                                </div>
+                            </div>
                             <div className="text-base font-medium text-gray-800 dark:text-gray-200">
                                 {user.name}
                             </div>
