@@ -4,9 +4,16 @@ import { Head } from "@inertiajs/react";
 import { act, useEffect, useState } from "react";
 
 export default function UserChat({ alluser }) {
-    const [name, setName] = useState(alluser[0].name);
     const [activeChat, setActiveChat] = useState(alluser[0])
-    {console.log(activeChat)}
+    const [message, setMessage] = useState([{
+        id: null, msg: null
+    }
+    ]);
+
+    const handleInputMessage = (message) => {
+        setMessage((prev) => {})
+    }
+
     return (
         <AuthenticatedLayout
             header={
@@ -41,8 +48,11 @@ export default function UserChat({ alluser }) {
                                                 21.09
                                             </div>
                                         </div>
-                                        <div className="mt-1 text-slate-300">
-                                            are you ok?
+                                        <div className="mt-1 flex items-center justify-between text-slate-300">
+                                            <p>are you ok?</p>
+                                            <div className="text-sm dark:text-gray-900 bg-green-500 rounded-full w-5 text-center">
+                                            <p>10</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -70,6 +80,9 @@ export default function UserChat({ alluser }) {
 
                         <div className=" bg-white shadow-sm sm:rounded-lg dark:bg-gray-800  w-full ">
                             <div className="p-6 text-gray-900 dark:text-gray-100 overflow-y-auto h-[600px] relative">
+                                <div className="bg-white w-fit mx-auto rounded-md px-5">
+                                    <p className=" text-sm my-2 dark:text-gray-900">Yesterday</p>
+                                </div>
                                 {
                                     <div className="flex flex-col items-end gap-2">
                                         <div className="bg-green-500 p-2 text-sm rounded-lg w-fit">
@@ -95,12 +108,15 @@ export default function UserChat({ alluser }) {
                                     </div>
                                 }
                                 <div className="absolute left-0 bottom-6 w-full px-6 flex">
-                                    <textarea
-                                        id="about"
-                                        name="about"
+                                    <input
+                                        id="message" 
+                                        type="text"
+                                        name="message"
                                         rows="1"
+                                        maxLength="250" onChange={(e) => console.log(e.target.value)}
+                                        placeholder="Input message..."
                                         className="block w-[85%]  rounded-tl-md rounded-bl-md border-0 py-2.5 shadow-sm overflow-hidden dark:bg-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                    ></textarea>
+                                    ></input>
                                     <button className="bg-indigo-800 p-1.5 w-[15%] rounded-tr-md rounded-br-md">
                                         send
                                     </button>
